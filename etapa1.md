@@ -51,5 +51,12 @@
 - Crie um banco de dados chamado **tecinternet_escola_seunome**
 - Usando o phpMyAdmin (via interface e/ou códigos SQL), crie a modelagem física de acordo com o que foi feito na modelagem lógica.
 
+---
+
+### C. Entrega dos arquivos de modelagem
+
+- Coloque o arquivo de modelagem lógica em seu repositório do exercício (em versão original e também exportado em formato de imagem)
+- Exporte um backup SQL do seu banco de dados completo e coloque também em seu repositório
+
 
 

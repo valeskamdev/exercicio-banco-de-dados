@@ -33,3 +33,12 @@ CREATE TABLE alunos (
 );
 ```
 
+## Criar relacionamentos
+
+```sql
+ALTER TABLE professores ADD FOREIGN KEY (curso_id) REFERENCES cursos(id);
+ALTER TABLE alunos ADD FOREIGN KEY (curso_id) REFERENCES cursos(id);
+ALTER TABLE cursos ADD FOREIGN KEY (professor_id) REFERENCES professores(id);
+```
+
+

@@ -27,19 +27,104 @@ UPDATE cursos SET professor_id = 11 WHERE id = 5;
 ```sql
 SELECT * FROM alunos WHERE data_nascimento < '2009-01-01';
 ```
-![](print-1.png)
+![](assets/print-1.png)
 
 ### (2)
 
 ```sql
-SELECT nome, ROUND((primeira_nota + segunda_nota) / 2, 2) AS media FROM alunos;
+SELECT nome, ROUND((primeira_nota + segunda_nota) / 2, 2) media FROM alunos;
 ```
 
-![](print-2.png)
+![](assets/print-2.png)
 
 ### (3)
 
 ```sql
-SELECT titulo, carga_horaria, ROUND(carga_horaria * 0.25) AS limite_faltas FROM cursos ORDER BY titulo;
+SELECT titulo, carga_horaria, ROUND(carga_horaria * 0.25) limite_faltas FROM cursos ORDER BY titulo;
 ```
-![](print-3.png)
+![](assets/print-3.png)
+
+### (4)
+
+```sql
+SELECT nome FROM professores WHERE area_atuacao = 'desenvolvimento';
+```
+![](assets/print-4.png)
+
+### (5)
+
+```sql
+SELECT area_atuacao, COUNT(*) quantidade FROM professores GROUP BY area_atuacao; 
+```
+![](assets/print-5.png)
+
+### (6)
+
+```sql
+SELECT alunos.nome AS aluno, cursos.titulo nome_do_curso, cursos.carga_horaria FROM alunos
+    INNER JOIN cursos ON alunos.curso_id = cursos.id;
+```
+![](assets/print-6.png)
+
+### (7)
+
+```sql
+SELECT professores.nome professor, cursos.titulo nome_do_curso FROM professores
+    INNER JOIN cursos ON professores.curso_id = cursos.id ORDER BY professor;
+```
+![](assets/print-7.png)
+
+### (8)
+
+```sql
+SELECT alunos.nome aluno, cursos.titulo nome_do_curso, professores.nome professor FROM alunos
+    INNER JOIN cursos ON alunos.curso_id = cursos.id
+    INNER JOIN professores ON cursos.professor_id = professores.id;
+```
+
+![](assets/print-8.png)
+
+### (9)
+
+```sql
+SELECT cursos.titulo nome_do_curso, COUNT(alunos.curso_id) quantidade_aluno FROM alunos 
+    INNER JOIN cursos ON alunos.curso_id = cursos.id 
+    GROUP BY nome_do_curso 
+    ORDER BY quantidade_aluno DESC;
+```
+![](assets/print-9.png)
+
+### (10)
+
+```sql
+SELECT alunos.nome aluno, alunos.primeira_nota, alunos.segunda_nota, ROUND((primeira_nota + segunda_nota) / 2, 2) media, cursos.titulo nome_do_curso FROM alunos
+    INNER JOIN cursos ON alunos.curso_id = cursos.id 
+    WHERE curso_id IN(1, 2) 
+    ORDER BY aluno;
+```
+
+![](assets/print-10.png)
+
+### (11)
+
+```sql
+UPDATE cursos SET titulo = 'Adobre XD', carga_horaria = 15 WHERE id = 4;
+```
+![](assets/print-11.png)
+
+### (12)
+
+```sql
+DELETE FROM alunos WHERE id IN(5, 3);
+```
+
+![](assets/print-12.png)
+
+### (13)
+
+```sql
+SELECT alunos.nome aluno, cursos.titulo nome_do_curso FROM alunos
+    INNER JOIN cursos ON alunos.curso_id = cursos.id 
+    ORDER BY aluno; 
+```
+![](assets/print-13.png)

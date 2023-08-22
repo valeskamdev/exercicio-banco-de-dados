@@ -1,0 +1,20 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <PHPCodeStyleSettings>
+      <option name="KEEP_RPAREN_AND_LBRACE_ON_ONE_LINE" value="true" />
+    </PHPCodeStyleSettings>
+    <codeStyleSettings language="HTML">
+      <arrangement>
+        <rules />
+      </arrangement>
+    </codeStyleSettings>
+    <codeStyleSettings language="PHP">
+      <option name="WRAP_ON_TYPING" value="0" />
+    </codeStyleSettings>
+    <codeStyleSettings language="Vue">
+      <arrangement>
+        <rules />
+      </arrangement>
+    </codeStyleSettings>
+  </code_scheme>
+</component>
